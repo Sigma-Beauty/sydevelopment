@@ -1,0 +1,14 @@
+<script>
+    window.MAKEBECOOL_BUNDLES = {
+        isPhysicalBundle: {% if product.metafields.mbc_bundle != blank or product.type == 'mbcBundle' %}true{% else %}false{% endif %},
+        product: {{ product | json }},
+        moneyFormat: {{ shop.money_format | json }},
+        fileUrl: '{{ "filename.png" | file_url }}',
+        jsUrls: {
+            widget: 'https://apps-bundles-cluster.makebecool.com/js/widget.js?v=1662032108372',
+            featuredBundle: 'https://apps-bundles-cluster.makebecool.com/js/featured-bundle.js?v=1662032108372'
+        }
+    };
+</script>
+
+<script src='https://apps-bundles-cluster.makebecool.com/js/app.js?v=1662032108372' defer></script>
